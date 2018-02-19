@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="accessListContainer">
+<div class="example-container mat-elevation-z8">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Spotlight Search">
+      </mat-form-field>
+      <button (click)="addAccessName()" mat-mini-fab color="primary"><mat-icon>add</mat-icon></button>
+  </div>
+  <mat-table #table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="readerType">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Reader Type</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.readerType}} </mat-cell>
+      </ng-container>
+    <ng-container matColumnDef="readerName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Reader(s) </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.readerName}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectAccessName(row)"></mat-row>
+  </mat-table>
+
+  <h3 class="loading" *ngIf="!dataSource">Loading access names...</h3>
+  </div>
+    </div>
+    <div class="accessFormContainer">
+        <app-accessform [astronaut]="astronaut"></app-accessform>
+    </div>
+  </div>

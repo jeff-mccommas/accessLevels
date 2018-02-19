@@ -1,0 +1,39 @@
+/* Structure */
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  .example-header {
+      /* display: flex; */
+    padding: 8px 24px 0;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+  
+  .container{
+    display: flex;
+  }
+  .accessFormContainer{
+    width: 45%;
+    padding: 10px;
+  }
+  .accessListContainer{
+    width: 55%;
+    padding: 10px;
+  }
+  .mat-column-select {
+    overflow: initial;
+  }
+  .loading{
+    padding-left: 20px
+  }
